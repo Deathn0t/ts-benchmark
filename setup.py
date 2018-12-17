@@ -13,9 +13,9 @@ extras_require = {
 }
 
 setup(
-    name='ts-benchmark',
+    name='ts',
     version='0.0.1',
-    packages=['ts-benchmark',],
+    packages=['ts',],
     license=open('LICENSE.md').read(),
     long_description=open('README.md').read(),
     install_requires=install_requires,
