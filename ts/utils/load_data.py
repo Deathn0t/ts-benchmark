@@ -3,6 +3,8 @@ import os
 
 import numpy as np
 import pandas as pd
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from tqdm import tqdm
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -77,3 +79,16 @@ def load_training_data():
     print("shape X_test: ", np.shape(X_test))
     print("shape Y_test: ", np.shape(Y_test))
     return (X_train, Y_train), (X_test, Y_test)
+
+def minmaxstdscaler():
+    """Use MinMaxScaler then StandardScaler.
+
+    Returns:
+        preprocessor:
+    """
+
+    preprocessor = Pipeline([
+        ('minmaxscaler', MinMaxScaler()),
+        ('stdscaler', StandardScaler()),
+    ])
+    return preprocessor
